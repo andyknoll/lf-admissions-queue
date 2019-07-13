@@ -1,0 +1,47 @@
+/* CustListItem.css */
+
+.cust-list-item {
+  margin: 10px 10px;
+  padding: 20px;
+  border: 0px solid #bbb;
+  background-color: #eee;
+  user-select: none;
+  min-width: 650px;
+}
+
+.cust-list-item:hover {
+  background-color: #ccc;
+}
+
+.cust-list-item span {
+  font-size: 1.5em;
+  text-decoration: none;
+  color: #333;
+}
+
+
+.col {
+  display: inline-block;
+  position: relative;
+  border: 0px solid #000;
+}
+
+.col-pos {
+  width: 30px;
+  text-align: right;
+  padding-right: 10px;
+}
+.col-name {
+  width: 300px;
+}
+.col-pet {
+  width: 100px;
+}
+.col-created {
+  width: 100px;
+  text-align: right;
+}
+.col-wait {
+  width: 125px;
+  text-align: right;
+}

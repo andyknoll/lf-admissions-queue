@@ -1,0 +1,42 @@
+/* CustCard.css */
+
+.cust-card {
+  width: 340px;
+  height: 460px;
+  padding: 20px;
+  background-color: #eee;
+  user-select: none;
+  border-radius: 5px;
+  border: 1px solid black;
+}
+
+.cust-card:hover {
+  background-color: #ccc;
+}
+
+.cust-card span {
+  font-size: 1.5em;
+  text-decoration: none;
+  color: #333;
+}
+
+.cust-card h1 {
+  color: #033;
+  text-align: center;
+  font-size: 1.5em;
+}
+
+.cust-card h2 {
+  color: #033;
+  text-align: center;
+  font-size: 1.0em;
+}
+
+.button-remove {
+  position: relative;
+  top: 360px;
+  margin-left: 10%;
+  width: 80%;
+  height: 80px;
+  font-size: 1.75em;
+}
