@@ -46,7 +46,6 @@ export const AjaxObject = {
 
     deleteCustomer(app) {
         deleteCustomerReq.params.id = app.state.currCust.id;
-        alert(deleteCustomerReq.params.id);
 
         axios.post(url, JSON.stringify(deleteCustomerReq), headers)
             .then(response => {

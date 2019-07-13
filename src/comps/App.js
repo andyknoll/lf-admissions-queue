@@ -30,18 +30,14 @@ class App extends Component {
   }
 
   onRefreshClick = () => {
-    //alert("App.onRefreshClick");
     this.makeReadCustomerQueueRequest();     // make Ajax call
   }
 
   onRemoveClick = () => {
-    //alert("App.onRemoveClick");
-    //jaxObject.getServerTime(this);   // make Ajax call
     this.makeDeleteCustomerRequest();     // make Ajax call
   }
 
   componentDidMount() {
-    //alert("componentDidMount")
     this.makeReadCustomerQueueRequest();     // make initial Ajax call
     setInterval(() => { 
       this.makeReadCustomerQueueRequest();   // make polling Ajax calls
