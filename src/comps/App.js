@@ -7,6 +7,11 @@ import { AjaxObject } from "./AxiosAjax";
 import CustCard from "./CustCard";
 import CustList from "./CustList";
 
+// put this is Config.js
+const Config = {
+  POLLING_MSECS: 3000
+}
+
 class App extends Component {
   constructor() {
     super();
@@ -14,24 +19,42 @@ class App extends Component {
       custArray: [], 
       currCust: null
     };
-    this.onContactClick = this.onContactClick.bind(this);   // must bind!
+    this.onCustClick = this.onCustClick.bind(this);       // must bind!
     this.onRemoveClick = this.onRemoveClick.bind(this);   // must bind!
   }
 
   // note how we do not need to select a list id now!
   // the current selected object is passed back up
-  onContactClick = (cust) => {
+  onCustClick = (cust) => {
     this.setState({currCust: cust});
   }
 
   onRefreshClick = () => {
     //alert("App.onRefreshClick");
-    AjaxObject.readCustomerQueue(this);   // make Ajax call
+    this.makeReadCustomerQueueRequest();     // make Ajax call
   }
 
   onRemoveClick = () => {
     //alert("App.onRemoveClick");
-    AjaxObject.getServerTime(this);   // make Ajax call
+    //jaxObject.getServerTime(this);   // make Ajax call
+    this.makeDeleteCustomerRequest();     // make Ajax call
+  }
+
+  componentDidMount() {
+    //alert("componentDidMount")
+    this.makeReadCustomerQueueRequest();     // make initial Ajax call
+    setInterval(() => { 
+      this.makeReadCustomerQueueRequest();   // make polling Ajax calls
+    }, Config.POLLING_MSECS);
+  }
+
+  makeReadCustomerQueueRequest() {
+    AjaxObject.readCustomerQueue(this);
+  }
+
+  makeDeleteCustomerRequest() {
+    if (!this.state.currCust) return;
+    AjaxObject.deleteCustomer(this);
   }
 
   render() {
@@ -49,7 +72,7 @@ class App extends Component {
           />
           <CustList 
             custs={this.state.custArray} 
-            onClick={this.onContactClick} 
+            onClick={this.onCustClick} 
           />
         </div>
       </div>

@@ -13,14 +13,14 @@
 
 .cust-card h1 {
   color: #033;
-  text-align: center;
-  font-size: 1.5em;
+  text-align: left;
+  font-size: 2em;
 }
 
 .cust-card h2 {
   color: #033;
-  text-align: center;
-  font-size: 1.0em;
+  text-align: left;
+  font-size: 1.5em;
 }
 
 .button-refresh {

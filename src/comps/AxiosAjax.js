@@ -17,6 +17,12 @@ const readCustomerQueueReq = {
     "objects": []
 };
 
+const deleteCustomerReq = {
+    "rpc": "deleteCustomer",
+    "params": {},
+    "objects": []
+};
+
 const getServerTimeReq = {
     "rpc": "getServerTime",
     "params": {},
@@ -32,6 +38,19 @@ export const AjaxObject = {
             .then(response => {
                 console.log(response.data);
                 app.setState({custArray: response.data.objects});
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    },
+
+    deleteCustomer(app) {
+        deleteCustomerReq.params.id = app.state.currCust.id;
+        alert(deleteCustomerReq.params.id);
+
+        axios.post(url, JSON.stringify(deleteCustomerReq), headers)
+            .then(response => {
+                console.log(response.data);
             })
             .catch(error => {
                 console.log(error);
