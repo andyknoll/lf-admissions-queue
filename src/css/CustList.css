@@ -2,8 +2,10 @@
 
 
 .cust-list {
+  position: relative;
   width: 800px;
   height: 500px;
+  left: 400px;
   overflow: auto;
   background-color: #fff;
   font-size: .8em;

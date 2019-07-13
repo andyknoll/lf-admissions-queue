@@ -2,23 +2,24 @@
 
 .cust-list-item {
   margin: 10px 10px;
-  padding: 20px;
+  padding: 24px;
   border: 0px solid #bbb;
+  color: #222;
   background-color: #eee;
   user-select: none;
   min-width: 650px;
 }
 
 .cust-list-item:hover {
-  background-color: #ccc;
+  color: #fff;
+  background-color: rgb(52, 105, 105);
 }
 
 .cust-list-item span {
   font-size: 1.5em;
   text-decoration: none;
-  color: #333;
+  color: #222;
 }
-
 
 .col {
   display: inline-block;
@@ -32,7 +33,7 @@
   padding-right: 10px;
 }
 .col-name {
-  width: 300px;
+  width: 325px;
 }
 .col-pet {
   width: 100px;

@@ -1,7 +1,6 @@
 // CustListItem.js
 
 import React from "react";
-import PropTypes from "prop-types";
 import "../css/CustListItem.css";
 
 // note how we do not need to select a list id now!
@@ -18,12 +17,4 @@ export default function CustListItem(props) {
     </div>
   );
 }
-
-// optional?
-CustListItem.propTypes = {
-  id:     PropTypes.number.isRequired,
-  name:   PropTypes.string.isRequired,
-  pet:    PropTypes.string.isRequired,
-  timeIn: PropTypes.string.isRequired
-};
 

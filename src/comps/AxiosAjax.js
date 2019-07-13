@@ -10,27 +10,42 @@ const headers = {
     'Access-Control-Allow-Origin': '*'
 };
 
-// this is not created with "new" - do not use "default" either
+// predefined request
+const readCustomerQueueReq = {
+    "rpc": "readCustomerQueue",
+    "params": {},
+    "objects": []
+};
+
+const getServerTimeReq = {
+    "rpc": "getServerTime",
+    "params": {},
+    "objects": []
+};
+
+// this is not created with "new" - does not use "default" either
+// pass in app so we can call setState() after response
 export const AjaxObject = {
-    
+
     readCustomerQueue(app) {
-        //alert("AjaxObject.readCustomerQueue");
-
-        let req = {
-            "rpc": "readCustomerQueue",
-            "params": {},
-            "objects": []
-        };
-        let reqJson = JSON.stringify(req);
-
-        axios.post(url, reqJson, headers)
+        axios.post(url, JSON.stringify(readCustomerQueueReq), headers)
             .then(response => {
                 console.log(response.data);
-                app.setState({contactArray: response.data.objects});
+                app.setState({custArray: response.data.objects});
             })
             .catch(error => {
                 console.log(error);
-                alert("ajaxObject - AJAX ERROR: " + error);
+            });
+    },
+
+    getServerTime(app) {
+        axios.post(url, JSON.stringify(getServerTimeReq), headers)
+            .then(response => {
+                // console.log(response.data);
+                alert(response.data.objects[0].time);
+            })
+            .catch(error => {
+                // console.log(error);
             });
     }
 

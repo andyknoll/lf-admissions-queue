@@ -11,7 +11,7 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      contactArray: [], 
+      custArray: [], 
       currCust: null
     };
     this.onContactClick = this.onContactClick.bind(this);   // must bind!
@@ -24,9 +24,14 @@ class App extends Component {
     this.setState({currCust: cust});
   }
 
-  // refresh list for now...
+  onRefreshClick = () => {
+    //alert("App.onRefreshClick");
+    AjaxObject.readCustomerQueue(this);   // make Ajax call
+  }
+
   onRemoveClick = () => {
-    AjaxObject.readCustomerQueue(this);
+    //alert("App.onRemoveClick");
+    AjaxObject.getServerTime(this);   // make Ajax call
   }
 
   render() {
@@ -36,13 +41,14 @@ class App extends Component {
           <h1 className="App-title">Lollypop Farm Admissions Queue</h1>
         </header>
 
-        <div class="cust-wrapper">
+        <div className="cust-wrapper">
           <CustCard 
             cust={this.state.currCust} 
+            onRefreshClick={this.onRefreshClick} 
             onRemoveClick={this.onRemoveClick} 
           />
           <CustList 
-            contacts={this.state.contactArray} 
+            custs={this.state.custArray} 
             onClick={this.onContactClick} 
           />
         </div>

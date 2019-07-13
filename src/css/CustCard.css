@@ -1,6 +1,7 @@
 /* CustCard.css */
 
 .cust-card {
+  position: absolute;
   width: 340px;
   height: 460px;
   padding: 20px;
@@ -8,16 +9,6 @@
   user-select: none;
   border-radius: 5px;
   border: 1px solid black;
-}
-
-.cust-card:hover {
-  background-color: #ccc;
-}
-
-.cust-card span {
-  font-size: 1.5em;
-  text-decoration: none;
-  color: #333;
 }
 
 .cust-card h1 {
@@ -32,11 +23,20 @@
   font-size: 1.0em;
 }
 
+.button-refresh {
+  position: absolute;
+  top: 320px;
+  margin-left: 15%;
+  width: 60%;
+  height: 60px;
+  font-size: 1.75em;
+}
+
 .button-remove {
-  position: relative;
-  top: 360px;
-  margin-left: 10%;
-  width: 80%;
-  height: 80px;
+  position: absolute;
+  top: 400px;
+  margin-left: 15%;
+  width: 60%;
+  height: 60px;
   font-size: 1.75em;
 }

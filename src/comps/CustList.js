@@ -1,10 +1,11 @@
 // CustList.js
 
 import React from "react";
-import PropTypes from "prop-types";
 import "../css/CustList.css";
 
 import CustListItem from "./CustListItem.js";
+
+// not using PropTypes!
 
 // generate a new <CustListItem> for each item (if any)
 export default function CustList(props) {
