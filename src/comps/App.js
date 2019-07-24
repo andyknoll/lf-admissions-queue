@@ -57,7 +57,7 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Lollypop Farm Admissions Queue</h1>
+          <h2 className="App-title">Lollypop Farm Admissions Queue - staff</h2>
         </header>
 
         <div className="cust-wrapper">

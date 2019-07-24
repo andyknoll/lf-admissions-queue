@@ -14,11 +14,11 @@ export default function CustList(props) {
   }
   return (
     <div className="cust-list">
-    { props.custs.map(c => 
+    { props.custs.map((c, idx) => 
       <CustListItem 
         key={c.id} 
         id={c.id} 
-        pos={c.position} 
+        pos={idx + 1} 
         firstName={c.firstName} 
         lastName={c.lastName} 
         pet={c.pet} 
